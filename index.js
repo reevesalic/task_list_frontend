@@ -10,7 +10,7 @@ let createNewTaskElement=function(taskString){
 	let listItem=document.createElement("li");
 
 	//input (checkbox)
-	let checkBox=document.createElement("input");//checkbx
+	let checkBox=document.createElement("input");//checkbox
 	//label
 	let label=document.createElement("label");//label
 	//input (text)
@@ -70,17 +70,17 @@ let listItem=this.parentNode;
 let editInput=listItem.querySelector('input[type=text]');
 let label=listItem.querySelector("label");
 let containsClass=listItem.classList.contains("editMode");
-		//If class of the parent is .editmode
+		//If class of the parent is edit mode
 		if(containsClass){
 
-		//switch to .editmode
+		//switch to edit mode
 		//label becomes the inputs value.
 			label.innerText=editInput.value;
 		}else{
 			editInput.value=label.innerText;
 		}
 
-		//toggle .editmode on the parent.
+		//toggle edit mode on the parent.
 		listItem.classList.toggle("editMode");
 }
 
