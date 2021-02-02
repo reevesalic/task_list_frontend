@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <title>Task List</title>
+    <h1>Task List</h1>
+    <link rel="stylesheet" href="style.css" type="text/css" media="screen" charset="utf-8">    
+  </head>
+  <body>
+    <div class="container">
+      <p>
+        <label for="new-task">Add Item</label><input id="new-task" type="text"><button>Add</button>
+      </p>
+      
+      <h3>Task List</h3>
+      <ul id="incomplete-tasks">
+        <li><input type="checkbox"><label>Task</label><input type="text"><button class="edit">Edit</button><button class="delete">Delete</button></li>
+        
+        <li class="editMode"><input type="checkbox"><label>Task</label><input type="text" value="Task"><button class="edit">Edit</button><button class="delete">Delete</button></li>
+        
+      </ul>
+      
+      <h3>Completed</h3>
+      <ul id="completed-tasks">
+        <li><input type="checkbox" checked><label>Task</label><input type="text"><button class="edit">Edit</button><button class="delete">Delete</button></li>
+      </ul>
+    </div>
+
+    <script src="app.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
