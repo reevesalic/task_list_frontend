@@ -1,7 +1,11 @@
 const endPoint = 'http://localhost:3000/api/v1/tasks'
 document.addEventListener('DOMContentLoaded', () => {
-     console.log("DOM is Loaded")
-     getTasks
+     
+     getTasks()
+
+     const createTasksForm = document.querySelector("create-task-form")
+     createTasksForm.addEventListener("submit", (e) => createFormHandler(e))
+     
      // fetch and load task list
      function getTasks(){
      fetch(endPoint)
