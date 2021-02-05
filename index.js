@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
      .then(response => response.json)
      .then(tasks => {
           tasks.data.forEach(tasks => {
-               let newTask = new tasks(task, task.attributes.task)
+               let newTask = new tasks(task, task.attributes)
                document.querySelector('tasks-container').innerHTML += newTask.renderTaskCard()
                
           })
@@ -38,7 +38,7 @@ function postFetch(task, description, category_id) {
      })
      .then(response => response.json())
      .then(task => {
-          
+          console.log(task);
           const taskData = task.data.attributes
           let newTask = newTask(taskData, taskData.attributes)
           document.querySelector('#task-container').innerHTML += newTask.renderTaskCard()
