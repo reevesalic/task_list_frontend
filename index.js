@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
      .then(tasks => {
           tasks.data.forEach(tasks => {
                let newTask = new tasks(task, task.attributes.task)
-               document.querySelector('tasks-container').innerHTML += newSyllabus.renderTaskCard()
+               document.querySelector('tasks-container').innerHTML += newTask.renderTaskCard()
                
           })
     
@@ -29,17 +29,18 @@ function createFormHandler(e) {
      postFetch(taskInput, descriptionInput, categoryId)
 }
 function postFetch(task, description, category_id) {
+     console.log(task, description, category_id)
      const bodyData = {task, description, category_id}
      fetch(endPoint, {
           method: "POST",
-          headers: {"Content-Type": "application/json"}
+          headers: {"Content-Type": "application/json"},
           body: JSON.stringify(bodyData)
      })
      .then(response => response.json())
      .then(task => {
-          console.log(task);
-          const taskData = task.data
-          let newTask = newSyllabus(syllabusData, syllabusData.attributes)
+          
+          const taskData = task.data.attributes
+          let newTask = newTask(taskData, taskData.attributes)
           document.querySelector('#task-container').innerHTML += newTask.renderTaskCard()
      })
 }
