@@ -1,51 +1,23 @@
-<html>
-  <head>
+<div class="form-container">
 
-    <h1>Task List</h1>
-    <link rel="stylesheet" href="style.css" type="text/css" media="screen" charset="utf-8">    
-  </head>
-  <body>
-    <div class="container">
-      <p>
-        <label for="new-task">Add a Task</label>
-        <input id="new-task" type="text">
-        <button>Add</button>
-      </p>
-      
-      <h3>Task List</h3>
-      <ul id="incomplete-tasks">
-        <li><input type="checkbox">
-          <label></label>
-          <input type="text">
-          <button class="edit">Edit</button>
-          <button class="delete">Delete</button></li>
-        
-        <li class="editMode">
-             <input type="checkbox">
-             <label></label>
-             <input type="text">
-             <button class="edit">Edit</button>
-             <button class="delete">Delete</button></li>
-        
-      </ul>
-      
-      <h3>Completed</h3>
-      <ul id="completed-tasks">
-        <li><input type="checkbox" checked>
-          <label></label>
-          <input type="text">
-          <button class="edit">Edit</button>
-          <button class="delete">Delete</button></li>
-      </ul>
+  <form id="create-task-form" style="">
+    <h3>Create a task!</h3>
 
-      <div class="container" id="syllabus-container">
+    <input id='input-title' type="text" name="title" value="" placeholder="Enter your task name..." class="input-text">
+    <br><br>
+    <textarea id='input-description' name="description" rows="8" cols="80" value="" placeholder="Enter your task description..."></textarea>
+    <br><br>
+    
+    <br><br>
 
-        
-        </div>
-      </div>
-    </div>
+    <select id="categories" name="categories">
+      <option value="1">Financial</option>
+      <option value="2">Health</option>
+      <option value="3">Misc</option>
+    </select>
+    <br><br>
 
-    <script src="app.js"></script>
-    <script src="index.js"></script>
-  </body>
-</html>
+    <input id= 'create-button' type="submit" name="submit" value="Create New Task" class="submit">
+  </form>
+
+</div>
