@@ -3,18 +3,18 @@ document.addEventListener('DOMContentLoaded', () => {
      console.log("DOM is Loaded");
      getTasks()
 
-     const createTaskForm = document.querySelector("create-task-form")
+     const createTaskForm = document.querySelector("#create-task-form")
     
      createTaskForm.addEventListener("submit", (e) => createFormHandler(e))
 })
      // fetch and load task list
-     function getTasks(){
+     function getTasks() {
      fetch(endPoint)
-     .then(response => response.json)
+     .then(response => response.json())
      .then(tasks => {
-          tasks.data.forEach(tasks => {
-               let newTask = new tasks(task, task.attributes)
-               document.querySelector('tasks-container').innerHTML += newTask.renderTaskCard()
+          tasks.data.forEach(task => {
+               let newTask = new Task(task, task.attributes)
+               document.querySelector('#task-container').innerHTML += newTask.renderTaskCard()
                
           })
     
