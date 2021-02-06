@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
      .then(response => response.json)
      .then(tasks => {
           tasks.data.forEach(tasks => {
-               let newTask = new tasks(task, task.attributes)
+               let newTask = new tasks(tasks, task.attributes)
                document.querySelector('tasks-container').innerHTML += newTask.renderTaskCard()
                
           })
