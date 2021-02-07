@@ -29,7 +29,7 @@ function createFormHandler(e) {
      postFetch(taskInput, descriptionInput, categoryId)
 }
 function postFetch(task, description, category_id) {
-     console.log(task, description, category_id)
+     // console.log(task, description, category_id)
      const bodyData = {task, description, category_id}
      fetch(endPoint, {
           method: "POST",
@@ -38,9 +38,9 @@ function postFetch(task, description, category_id) {
      })
      .then(response => response.json())
      .then(task => {
-          console.log(task);
+          
           const taskData = task.data.attributes
           let newTask = newTask(taskData, taskData.attributes)
-          document.querySelector('#task-container').innerHTML += newTask.renderTaskCard()
+          document.querySelector('#task-container').innerHTML += newTask.renderTaskCard(task)
      })
 }
