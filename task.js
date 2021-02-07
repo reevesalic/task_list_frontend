@@ -1,4 +1,4 @@
-renderTaskCard() {
+renderTaskCard(task) {
      return `
      <div class="col-md-4">
         <div class="card mb-4 shadow-sm">

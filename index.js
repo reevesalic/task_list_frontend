@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
      createTaskForm.addEventListener("submit", (e) => createFormHandler(e))
 })
      // fetch and load task list
-     function getTasks(){
+     function getTasks(task){
      fetch(endPoint)
      .then(response => response.json)
      .then(tasks => {
