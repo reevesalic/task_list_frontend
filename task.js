@@ -12,8 +12,8 @@ class Task {
 renderTaskCard() {
      return `
      
-            <h5>${this.task}</h5>
-            <p>${this.description}</p>
+            <h5>Task: ${this.task}</h5>
+            <p>Description: ${this.description}</p>
             <p">Category: ${this.category.category}</p>
             <button data-id=${this.id}>Edit</button>`
             
