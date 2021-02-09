@@ -37,8 +37,8 @@ function postFetch(task, description, category_id) {
      .then(response => response.json())
      .then(task => {
           
-          const taskData = task.data.attributes
-          let newTask = newTask(taskData, taskData.attributes)
+          const taskData = task.data
+          let newTask = new Task(taskData, taskData.attributes)
           document.querySelector('#task-container').innerHTML += newTask.renderTaskCard()
           
      })
