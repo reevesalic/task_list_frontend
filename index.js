@@ -39,7 +39,7 @@ function postFetch(task, description, category_id) {
           
           const taskData = task.data
           let newTask = new Task(taskData, taskData.attributes)
-          document.querySelector('#task-container').innerHTML += newTask.renderTaskCard()
+          document.querySelector('#tasks-container').innerHTML += newTask.renderTaskCard()
           
      })
 }
