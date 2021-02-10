@@ -27,8 +27,8 @@ function createFormHandler(e) {
      postFetch(taskInput, descriptionInput, categoryId)
 }
 function postFetch(task, description, category_id) {
-     // console.log(task, description, category_id)
-     const bodyData = {task, description, category_id}
+     console.log(task, description, category_id)
+     const bodyData = {task: {task, description, category_id}}
      fetch(endPoint, {
           method: "POST",
           headers: {"Content-Type": "application/json"},
