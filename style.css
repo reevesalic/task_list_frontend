@@ -1,5 +1,5 @@
 /* Add a "checked" mark when clicked on */
-ul li.checked::before {
+.checked:before {
      content: '';
      position: absolute;
      border-color: #fff;
