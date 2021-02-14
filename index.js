@@ -57,10 +57,18 @@ function postFetch(task, description, category_id) {
           })
      })
 
-//     function deleteTask() {
-//           alert("Deleted!");
-      
-//         }
-    
 
-}
+     incompleteTasksHolder.addEventListener("onclick", function(eventObject) {
+
+          if (eventObject.target && eventObject.target.matches("input[type=checkbox]")) {
+              // eventObject.target is the checkbox you want to work with
+        
+              var checkbox = eventObject.target;
+              // YOUR CODE:
+              var item = checkbox.parentNode;
+              checkbox.setAttribute("checked", "checked");
+              completedTasksHolder.appendChild(item);  
+          }
+        });
+ } 
+
