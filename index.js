@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
      const createTaskForm = document.querySelector("#create-task-form")
     
      createTaskForm.addEventListener("submit", (e) => createFormHandler(e))
+     
 })
      // fetch and load task list
      function getTasks() {
@@ -15,6 +16,12 @@ document.addEventListener('DOMContentLoaded', () => {
           tasks.data.forEach(task => {
                let newTask = new Task(task, task.attributes)
                document.querySelector('#tasks-container').innerHTML += newTask.renderTaskCard()
+               const matches = document.querySelectorAll('.delete'); 
+          matches.forEach((item)=>{
+               item.onclick=function(){
+                    alert("deleted!")
+               }
+          })
         })
      })
 }
@@ -39,20 +46,29 @@ function postFetch(task, description, category_id) {
           
           const taskData = task.data
           let newTask = new Task(taskData, taskData.attributes)
+          const container =
           document.querySelector('#tasks-container').innerHTML += newTask.renderTaskCard()
-          
+          const matches = document.querySelectorAll('.delete'); 
+          matches.forEach((item)=>{
+               item.onclick=function(){
+                    alert("deleted!")
+               }
+          })
      })
 
+    function deleteTask() {
+          alert("Deleted!");
+      
+        }
+     // const deleteButton = document.createElement("button");
+     // deleteButton.innerHTML = "Delete";
+     // deleteButton.setAttribute("delete");
 
-     const deleteButton = document.createElement("button");
-     deleteButton.innerHTML = "Delete";
-     deleteButton.setAttribute("delete");
+     // const removeItem = document.getElementsByClassName("delete");
+     // removeItem.addEventListener("onclick", "removeTask(removeItem)");
 
-     const removeItem = document.getElementsByClassName("delete");
-     removeItem.addEventListener("onclick", "removeTask(removeItem)");
+     // function removeTask(removeItem) {
+     // const parent = removeItem.parentElement.parentElement;
+     // parent.parentElement.removeChild(parent);
 
-     function removeTask(removeItem) {
-     const parent = removeItem.parentElement.parentElement;
-     parent.parentElement.removeChild(parent);
-}
 }

@@ -9,16 +9,21 @@ class Task {
     console.log(this)
   }
 
+  
 renderTaskCard() {
      return `
      
      <h5> <input type="checkbox" class="checked"><label for="checkbox"></label>Task: ${this.task}</h5>
             <p>Description: ${this.description}</p>
             <p">Category: ${this.category.category}</p>
-            <input id="button" type="button" name="delete" value="Delete Task" class="delete">
+            <input id="delete" type="button" name="delete" value="Delete Task" class="delete">
+
             <br>`
 }
+    deleteTask() {
+      alert("Deleted!");
 
+}
 // DELETE task
 // fetch('http://localhost:3000/api/v1/tasks', {
 // method: ‘DELETE’
