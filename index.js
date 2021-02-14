@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
           tasks.data.forEach(task => {
                let newTask = new Task(task, task.attributes)
                document.querySelector('#tasks-container').innerHTML += newTask.renderTaskCard()
+               //delete button and display message.
                const matches = document.querySelectorAll('.delete'); 
           matches.forEach((item)=>{
                item.onclick=function(){
@@ -56,19 +57,10 @@ function postFetch(task, description, category_id) {
           })
      })
 
-    function deleteTask() {
-          alert("Deleted!");
+//     function deleteTask() {
+//           alert("Deleted!");
       
-        }
-     // const deleteButton = document.createElement("button");
-     // deleteButton.innerHTML = "Delete";
-     // deleteButton.setAttribute("delete");
-
-     // const removeItem = document.getElementsByClassName("delete");
-     // removeItem.addEventListener("onclick", "removeTask(removeItem)");
-
-     // function removeTask(removeItem) {
-     // const parent = removeItem.parentElement.parentElement;
-     // parent.parentElement.removeChild(parent);
+//         }
+    
 
 }

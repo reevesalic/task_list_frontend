@@ -20,15 +20,11 @@ renderTaskCard() {
 
             <br>`
 }
-    deleteTask() {
-      alert("Deleted!");
+//     deleteTask() {
+//       alert("Deleted!");
 
-}
-// DELETE task
-// fetch('http://localhost:3000/api/v1/tasks', {
-// method: ‘DELETE’
-// })
-// empty response: {}
+// }
+
 
 }
 
