@@ -57,18 +57,24 @@ function postFetch(task, description, category_id) {
           })
      })
 
+          //checkbox
+     completeTasksHolder.addEventListener("onclick", function(complete) {
 
-     incompleteTasksHolder.addEventListener("onclick", function(eventObject) {
-
-          if (eventObject.target && eventObject.target.matches("input[type=checkbox]")) {
-              // eventObject.target is the checkbox you want to work with
+          if (complete.target && complete.target.matches("input[type=checkbox]")) {
+              
         
-              var checkbox = eventObject.target;
-              // YOUR CODE:
+              var checkbox = complete.target;
+              
               var item = checkbox.parentNode;
               checkbox.setAttribute("checked", "checked");
               completedTasksHolder.appendChild(item);  
           }
         });
+
+          //delete task
+        function removeTask(task){
+          let taskToRemove = document.getElementById(task);
+          taskToRemove.parentNode.removeChild(taskToRemove);
+  }
  } 
 

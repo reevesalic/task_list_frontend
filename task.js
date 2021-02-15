@@ -13,7 +13,7 @@ class Task {
 renderTaskCard() {
      return `
      
-     <h5> <input type="checkbox" class="checked"><label for="checkbox"></label>Task: ${this.task}</h5>
+     <h5> <input type="checkbox" class="complete"><label for="complete"></label>Task: ${this.task}</h5>
             <p>Description: ${this.description}</p>
             <p">Category: ${this.category.category}</p>
             <input id="delete" type="button" name="delete" value="Delete Task" class="delete">
