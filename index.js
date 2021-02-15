@@ -59,20 +59,16 @@ function postFetch(task, description, category_id) {
 
           //checkbox
      completeTasksHolder.addEventListener("onclick", function(complete) {
-
           if (complete.target && complete.target.matches("input[type=checkbox]")) {
-              
-        
-              var checkbox = complete.target;
-              
-              var item = checkbox.parentNode;
-              checkbox.setAttribute("checked", "checked");
-              completedTasksHolder.appendChild(item);  
+             let checkbox = complete.target;
+             let task = checkbox.parentNode;
+              checkbox.setAttribute("complete");
+              completeTasksHolder.appendChild(task);  
           }
         });
 
           //delete task
-        function removeTask(task){
+        function removeTask(task) {
           let taskToRemove = document.getElementById(task);
           taskToRemove.parentNode.removeChild(taskToRemove);
   }
