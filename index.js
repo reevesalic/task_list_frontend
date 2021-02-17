@@ -19,14 +19,14 @@ function getTasks() {
 
                     //delete button and display message.
                     const matches = document.querySelector('#tasks-container').querySelectorAll('.delete');
-                    matches.forEach((item, index) => {
-                         item.onclick = ((e) => {
+                    matches.forEach((button, index) => {
+                         button.onclick = ((e) => {
                               e.preventDefault();
-                              e.stopPropagation();
+                              
                               const filteredItems = tasks.data.filter(x => x.id !== index);
                               tasks.data = filteredItems;
 
-                              fetch(endPoint, {
+                              fetch( `http://localhost:3000/api/v1/tasks/${button.dataset.id}`, {
                                    method: 'DELETE',
                                    headers: {
                                         'Content-Type': 'application/json'
@@ -78,7 +78,7 @@ function postFetch(task, description, category_id) {
      //           completeTasksHolder.appendChild(task);
      //      }
      // });
-
+ 
      //delete task
      function removeTask(task) {
           // let taskToRemove = document.getElementById(task);
