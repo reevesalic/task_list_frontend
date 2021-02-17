@@ -16,14 +16,23 @@ function getTasks() {
                tasks.data.forEach(task => {
                     let newTask = new Task(task, task.attributes)
                     document.querySelector('#tasks-container').innerHTML += newTask.renderTaskCard()
+
                     //delete button and display message.
                     const matches = document.querySelector('#tasks-container').querySelectorAll('.delete');
                     matches.forEach((item, index) => {
-                         item.onclick = ((e)=> {
-                              e.preventDefault(); 
+                         item.onclick = ((e) => {
+                              e.preventDefault();
                               e.stopPropagation();
                               const filteredItems = tasks.data.filter(x => x.id !== index);
                               tasks.data = filteredItems;
+
+                              fetch(endPoint, {
+                                   method: 'DELETE',
+                                   headers: {
+                                        'Content-Type': 'application/json'
+                                   },
+                                   body: JSON.stringify(task)
+                              })
                          })
                     })
                })
@@ -52,12 +61,12 @@ function postFetch(task, description, category_id) {
                let newTask = new Task(taskData, taskData.attributes)
                const container =
                     document.querySelector('#tasks-container').innerHTML += newTask.renderTaskCard()
-               // const matches = document.querySelectorAll('.delete'); 
-               // matches.forEach((item)=>{
-               //      item.onclick=function(){
-               //           alert("deleted!")
-               //      }
-               // })
+               const matches = document.querySelectorAll('.delete');
+               matches.forEach((item) => {
+                    item.onclick = function () {
+                         alert("deleted!")
+                    }
+               })
           })
 
      //checkbox
