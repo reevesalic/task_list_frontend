@@ -25,14 +25,18 @@ function getTasks() {
                               
                               const filteredItems = tasks.data.filter(x => x.id !== index);
                               tasks.data = filteredItems;
-
+                              
+                              
                               fetch( `http://localhost:3000/api/v1/tasks/${button.dataset.id}`, {
                                    method: 'DELETE',
                                    headers: {
                                         'Content-Type': 'application/json'
                                    },
                                    body: JSON.stringify(task)
+                   
                               })
+                              let removeTask = new Task(task, task.attributes)
+                              document.querySelector('#tasks-container').innerHTML -= removeTask.renderTaskCard()
                          })
                     })
                })
