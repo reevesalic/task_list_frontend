@@ -1,5 +1,15 @@
-.form-container {
-  background-color: black;
-  color: white;
+* {
+  background-color: #e6ecdd;
 }
+ 
+* {
+  display: inline-block;
+  font-size: 20px; */ */
+  padding: 5px;
+} 
 
+h1 {
+  display: inline-block;
+  font-size: 30px;
+  padding: 40px;
+} */
