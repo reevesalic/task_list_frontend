@@ -2,14 +2,54 @@
   background-color: #e6ecdd;
 }
  
-* {
+/* * {
   display: inline-block;
-  font-size: 20px; */ */
+  font-size: 20px;
   padding: 5px;
-} 
+}  */
+
+/* h1 {
+  text-align: left;
+  font-size: 30px;
+  padding: 5px;
+}  */
+
+.div {
+  box-sizing: border-box;
+}
+
+.form-container {
+  
+  width: 80%;
+  margin: 80px;
+  text-align: left;
+  line-height: 30px;
+  font-size: 40px;
+}
+
+h3 {
+  
+  width: 80%;
+  margin: 0px;
+  text-align: left;
+  line-height: 30px;
+  font-size: 30px;
+}
+
+.tasklist {
+  
+  width: 80%;
+  margin: 80px;
+  text-align: left;
+  line-height: 30px;
+  font-size: 20px;
+}
 
 h1 {
-  display: inline-block;
+  
+  width: 80%;
+  margin: 80px;
+  text-align: left;
+  line-height: 30px;
   font-size: 30px;
-  padding: 40px;
-} */
+}
