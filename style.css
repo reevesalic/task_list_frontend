@@ -1,12 +1,24 @@
-* {
-  background-color: #e6ecdd;
-}
- 
 /* * {
-  display: inline-block;
-  font-size: 20px;
-  padding: 5px;
-}  */
+  background-color: #c9d3ec;
+} */
+ 
+.form-container {
+  display: flex;
+  flex-wrap: wrap;
+  border: 3px solid #000;
+  background-color: #91bde594;
+}  
+
+.tasklist {
+
+  width: 50px;
+  border: 3px solid #000;
+  background-color: #91bde594;
+  width: 50%;
+  margin: 10px;
+  line-height: 75px;
+  font-size: 30px;
+}
 
 /* h1 {
   text-align: left;
@@ -30,7 +42,7 @@
 h3 {
   
   width: 80%;
-  margin: 0px;
+  margin: 80px;
   text-align: left;
   line-height: 30px;
   font-size: 30px;
