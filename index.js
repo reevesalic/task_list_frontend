@@ -22,34 +22,45 @@ function getTasks() {
                     button.onclick = (e) => {
                         const filteredItems = tasks.data.filter((x) => x.id !== index);
                         tasks.data = filteredItems;
-
+                        
+                        
                         fetch(`http://localhost:3000/api/v1/tasks/${button.dataset.id}`, {
                             method: "DELETE",
                             headers: {
                                 "Content-Type": "application/json",
                             },
                             body: JSON.stringify(task),
+                            
                         });
+                            
+                       
                         window.location.reload();
+                        //find DOM element and delete from the page. set html to blank.
+                        //make sure the EL is attached to the newly created task. 
                     };
+                    
                 });
-                //checkbox
-               //  const matches = document.querySelector("#tasks-container").querySelectorAll(".complete");
-               //  matches.forEach((checkbox, index) => {
-               //      checkbox.onclick = (e) => {
-               //          const filteredItems = tasks.data.filter((x) => x.id !== index);
-               //          tasks.data = filteredItems;
+                // task.parentNode.removeChild(task);
+                //     document.getElementById(`${this.id}`).remove()
 
-               //          fetch(`http://localhost:3000/api/v1/tasks/${checkbox.dataset.id}`, {
-               //              method: "POST",
-               //              headers: {
-               //                  "Content-Type": "application/json",
-               //              },
-               //              body: JSON.stringify(task),
-               //          });
-               //          window.location.reload();
-               //      };
-               //  });
+                //add event listener to check in the backend. loop through all elements
+                //checkbox
+                // const matched = document.querySelector("#tasks-container").querySelectorAll(".complete");
+                // matches.forEach((checkbox, index) => {
+                //     checkbox.onclick = (e) => {
+                //         const filteredItems = tasks.data.filter((x) => x.id !== index);
+                //         tasks.data = filteredItems;
+
+                //         fetch(`http://localhost:3000/api/v1/tasks/${checkbox.dataset.id}`, {
+                //             method: "POST",
+                //             headers: {
+                //                 "Content-Type": "application/json",
+                //             },
+                //             body: JSON.stringify(task),
+                //         });
+                //         window.location.reload();
+                //     };
+                // });
             });
         });
 }
@@ -76,8 +87,12 @@ function postFetch(task, description, category_id) {
             const container = (document.querySelector("#tasks-container").innerHTML += newTask.renderTaskCard());
             const matches = document.querySelectorAll(".delete");
             matches.forEach((item) => {
+
                 item.onclick = function () {
+                    removeTask()
                     alert("deleted!");
+                    
+                    window.location.reload();
                 };
             });
         });
@@ -87,5 +102,6 @@ function postFetch(task, description, category_id) {
     //delete task
     function removeTask(task) {
         task.parentNode.removeChild(task);
+        document.getElementById(`${this.id}`).remove()
     }
 }
