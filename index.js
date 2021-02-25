@@ -33,17 +33,21 @@ function getTasks() {
                             
                         });
                             
-                       
-                        window.location.reload();
+                        
+                        
+                    
+                        // window.location.reload();
                         //find DOM element and delete from the page. set html to blank.
+                        // var el = document.getElementById('task');
+                        //     el.remove();
                         //make sure the EL is attached to the newly created task. 
                     };
                     
                 });
-                // task.parentNode.removeChild(task);
-                //     document.getElementById(`${this.id}`).remove()
+                
 
                 //add event listener to check in the backend. loop through all elements
+                
                 //checkbox
                 // const matched = document.querySelector("#tasks-container").querySelectorAll(".complete");
                 // matches.forEach((checkbox, index) => {
@@ -61,6 +65,8 @@ function getTasks() {
                 //         window.location.reload();
                 //     };
                 // });
+
+                // document.getElementById('checkbox').click();
             });
         });
 }

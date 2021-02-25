@@ -28,4 +28,12 @@ renderTaskCard() {
 
 
 
+function check() {
+  document.getElementById(".complete").checked = true;
+}
+
+function uncheck() {
+  document.getElementById(".complete").checked = false;
+}
+
 Task.all = [];
