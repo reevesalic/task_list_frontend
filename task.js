@@ -15,7 +15,7 @@ renderTaskCard() {
      
      <div class="tasklist"id=${this.id}>
     
-     <h4> <input type="checkbox" class="complete" checked><label data-id = ${this.id} for="complete" ${this.complete} > </label> Task: ${this.task} </h4>
+     <h4> <input type="checkbox" class="complete" ${this.complete !== false ? "checked" :""}><label data-id = ${this.id} for="complete"> </label> Task: ${this.task} </h4>
             <p>Description: ${this.description}</p>
             <p">Category: ${this.category.category}</p>
             <input id="delete" type="button" name="delete" value="Delete Task" class="delete" data-id = ${this.id}>
@@ -28,12 +28,12 @@ renderTaskCard() {
 
 
 
-function check() {
-  document.getElementById(".complete").checked = true;
-}
+// function check() {
+//   document.getElementById(".complete").checked = true;
+// }
 
-function uncheck() {
-  document.getElementById(".complete").checked = false;
-}
+// function uncheck() {
+//   document.getElementById(".complete").checked = false;
+// }
 
 Task.all = [];
