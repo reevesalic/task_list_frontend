@@ -9,7 +9,7 @@ class Task {
     Task.all.push(this)
     console.log(this)
   }
-//  check to see if the box is checked or not
+
 renderTaskCard() {
      return `
      
@@ -25,15 +25,5 @@ renderTaskCard() {
             
 }
 }
-
-
-
-// function check() {
-//   document.getElementById(".complete").checked = true;
-// }
-
-// function uncheck() {
-//   document.getElementById(".complete").checked = false;
-// }
 
 Task.all = [];

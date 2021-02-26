@@ -18,33 +18,7 @@ function getTasks() {
                 document.querySelector("#tasks-container").innerHTML += newTask.renderTaskCard();
                 ttaskList.push(newTask);                                                                      
 
-              
-    
-
-
-
-
-                //add event listener to check in the backend. loop through all elements
-                
-                //checkbox
-                // const matched = document.querySelector("#tasks-container").querySelectorAll(".complete");
-                // matches.forEach((checkbox, index) => {
-                //     checkbox.onclick = (e) => {
-                //         const filteredItems = tasks.data.filter((x) => x.id !== index);
-                //         tasks.data = filteredItems;
-
-                //         fetch(`http://localhost:3000/api/v1/tasks/${checkbox.dataset.id}`, {
-                //             method: "POST",
-                //             headers: {
-                //                 "Content-Type": "application/json",
-                //             },
-                //             body: JSON.stringify(task),
-                //         });
-                //         window.location.reload();
-                //     };
-                // });
-
-                // document.getElementById('checkbox').click();
+                           
             });
         }).then(() => {
             let tContain = document.querySelector("#tasks-container");
