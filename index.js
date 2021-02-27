@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     createTaskForm.addEventListener("submit", (e) => createFormHandler(e));
 });
+
 // fetch and load task list
 function getTasks() {
     let ttaskList = [];
@@ -18,7 +19,7 @@ function getTasks() {
                 document.querySelector("#tasks-container").innerHTML += newTask.renderTaskCard();
                 ttaskList.push(newTask);                                                                      
 
-                           
+                          
             });
         }).then(() => {
             let tContain = document.querySelector("#tasks-container");
@@ -90,6 +91,10 @@ function postFetch(task, description, category_id) {
             const taskData = task.data;
             let newTask = new Task(taskData, taskData.attributes);
             const container = (document.querySelector("#tasks-container").innerHTML += newTask.renderTaskCard());
+
+
+
+
             window.location.reload();
         });
 
