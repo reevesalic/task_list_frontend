@@ -14,7 +14,6 @@ renderTaskCard() {
      return `
      
      <div class="tasklist" data-id = ${this.id}>
-     
      <h4> <input type="checkbox" class="complete"><label for="complete" ${this.complete}> </label> Task: ${this.task}</h4>
             <p>Description: ${this.description}</p>
             <p">Category: ${this.category.category}</p>

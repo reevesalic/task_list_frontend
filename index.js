@@ -17,20 +17,19 @@ function getTasks() {
             tasks.data.forEach((task) => {
                 let newTask = new Task(task, task.attributes);
                 document.querySelector("#tasks-container").innerHTML += newTask.renderTaskCard();
-                ttaskList.push(newTask);                                                                      
-
-                          
+                ttaskList.push(newTask);
             });
-        }).then(() => {
+        })
+        .then(() => {
             let tContain = document.querySelector("#tasks-container");
             completeChecks = tContain.querySelectorAll(".complete");
             for (const c of completeChecks) {
                 const specificTask = ttaskList.filter((x) => x.id === c.parentNode.parentNode.id.toString());
-                c.addEventListener('change', (e) => {
+                c.addEventListener("change", (e) => {
                     e.preventDefault();
                     const ID = e.target.parentNode.parentNode.id;
                     const complete = e.target.checked;
-                
+
                     setCheckComplete(specificTask, ID, complete);
                 });
             }
@@ -40,23 +39,20 @@ function getTasks() {
             matches.forEach((button, index) => {
                 button.onclick = (e) => {
                     const filteredItems = ttaskList.filter((x) => x.id !== index);
-                    
+
                     fetch(`http://localhost:3000/api/v1/tasks/${button.dataset.id}`, {
                         method: "DELETE",
                         headers: {
                             "Content-Type": "application/json",
                         },
                         body: JSON.stringify(filteredItems),
-                        
                     });
                     let delTask = ttaskList.filter((x) => x.id === e.target.parentNode.parentNode.id);
 
                     document.getElementById(delTask[0].id).remove();
-
                 };
             });
         });
-        
 }
 
 function createFormHandler(e) {
@@ -75,7 +71,7 @@ function setCheckComplete(task, id, complete) {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(bodyData),
-    }).then((response) => response.json())
+    }).then((response) => response.json());
 }
 
 function postFetch(task, description, category_id) {
@@ -92,10 +88,6 @@ function postFetch(task, description, category_id) {
             let newTask = new Task(taskData, taskData.attributes);
             const container = (document.querySelector("#tasks-container").innerHTML += newTask.renderTaskCard());
 
-
-
-
             window.location.reload();
         });
-
 }
