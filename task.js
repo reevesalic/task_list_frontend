@@ -1,3 +1,4 @@
+
 class Task {
 
   constructor(task, taskAttributes) {
@@ -27,3 +28,5 @@ renderTaskCard() {
 }
 
 Task.all = [];
+
+
