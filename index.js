@@ -21,7 +21,6 @@ function getTasks() {
 
                            
             });
-            
 
         }).then(() => {
             let tContain = document.querySelector("#tasks-container");

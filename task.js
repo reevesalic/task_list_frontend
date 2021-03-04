@@ -1,3 +1,4 @@
+
 class Task {
 
   constructor(task, taskAttributes) {
@@ -15,7 +16,10 @@ renderTaskCard() {
      
      <div class="tasklist"id=${this.id}>
     
+
      <h4> <input type="checkbox" class="complete" ${this.complete === true ? "checked" :  ""}><label data-id = ${this.id} for="complete"> </label> Task: ${this.task} </h4>
+
+   
             <p>Description: ${this.description}</p>
             <p">Category: ${this.category.category}</p>
             <input id="delete" type="button" name="delete" value="Delete Task" class="delete" data-id = ${this.id}>
@@ -27,3 +31,4 @@ renderTaskCard() {
 }
 
 Task.all = [];
+
