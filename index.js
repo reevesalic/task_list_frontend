@@ -13,13 +13,16 @@ function getTasks() {
     fetch(endPoint)
         .then((response) => response.json())
         .then((tasks) => {
-            tasks.data.forEach((task) => {
+            
+                tasks.data.forEach((task) => {
                 let newTask = new Task(task, task.attributes);
                 document.querySelector("#tasks-container").innerHTML += newTask.renderTaskCard();
                 ttaskList.push(newTask);                                                                      
 
                            
             });
+            
+
         }).then(() => {
             let tContain = document.querySelector("#tasks-container");
             completeChecks = tContain.querySelectorAll(".complete");
@@ -89,6 +92,7 @@ function postFetch(task, description, category_id) {
         .then((task) => {
             const taskData = task.data;
             let newTask = new Task(taskData, taskData.attributes);
+            newTask.complete = false;
             const container = (document.querySelector("#tasks-container").innerHTML += newTask.renderTaskCard());
             window.location.reload();
         });
