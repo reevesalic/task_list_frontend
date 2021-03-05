@@ -7,6 +7,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     createTaskForm.addEventListener("submit", (e) => createFormHandler(e));
 });
+
+
 // fetch and load task list
 function getTasks() {
     let ttaskList = [];
