@@ -21,9 +21,12 @@ class Task {
     <p>Description: ${this.description}</p>
     <p">Category: ${this.category.category}</p>
     <input id="delete" type="button" name="delete" value="Delete Task" class="delete" data-id = ${this.id}>
+   
+
     <br>
 </div> 
-`;
+
+`; 
   }
 }
 

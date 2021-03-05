@@ -59,6 +59,8 @@ function getTasks() {
         });
         
 }
+var x = document.createElement("INPUT");
+x.setAttribute("type", "date");
 
 function createFormHandler(e) {
     e.preventDefault();
