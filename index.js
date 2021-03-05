@@ -17,9 +17,7 @@ function getTasks() {
                 tasks.data.forEach((task) => {
                 let newTask = new Task(task, task.attributes);
                 document.querySelector("#tasks-container").innerHTML += newTask.renderTaskCard();
-                ttaskList.push(newTask);                                                                      
-
-                           
+                ttaskList.push(newTask);                                                         
             });
 
         }).then(() => {

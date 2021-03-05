@@ -16,10 +16,14 @@ renderTaskCard() {
      
      <div class="tasklist"id=${this.id}>
     
+<<<<<<< HEAD
 
      <h4> <input type="checkbox" class="complete" ${this.complete === true ? "checked" :  ""}><label data-id = ${this.id} for="complete"> </label> Task: ${this.task} </h4>
 
    
+=======
+     <h4> <input type="checkbox" class="complete" ${this.complete == true ? "checked" : ""}><label data-id = ${this.id} for="complete"> </label> Task: ${this.task} </h4>
+>>>>>>> Minor formatting changes
             <p>Description: ${this.description}</p>
             <p">Category: ${this.category.category}</p>
             <input id="delete" type="button" name="delete" value="Delete Task" class="delete" data-id = ${this.id}>
