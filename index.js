@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
 function getTasks() {
     let ttaskList = [];
     fetch(endPoint)
+    
         .then((response) => response.json())
         .then((tasks) => {
             

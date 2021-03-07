@@ -19,7 +19,7 @@ class Task {
           this.id
       } for="complete"> </label>  Task: ${this.task} </h4>
     <p>Description: ${this.description}</p>
-    <p">Category: ${this.category.category}</p>
+    <p>Category: ${this.category.category}</p>
     <input id="delete" type="button" name="delete" value="Delete Task" class="delete" data-id = ${this.id}>
    
 
