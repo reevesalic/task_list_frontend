@@ -7,21 +7,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
     createTaskForm.addEventListener("submit", (e) => createFormHandler(e));
 });
-
-
 // fetch and load task list
 function getTasks() {
     let ttaskList = [];
     fetch(endPoint)
-    
         .then((response) => response.json())
         .then((tasks) => {
             
                 tasks.data.forEach((task) => {
                 let newTask = new Task(task, task.attributes);
                 document.querySelector("#tasks-container").innerHTML += newTask.renderTaskCard();
-                ttaskList.push(newTask);                                                         
+                ttaskList.push(newTask);                                                                      
+
+                           
             });
+            
 
         }).then(() => {
             let tContain = document.querySelector("#tasks-container");
@@ -60,8 +60,6 @@ function getTasks() {
         });
         
 }
-var x = document.createElement("INPUT");
-x.setAttribute("type", "date");
 
 function createFormHandler(e) {
     e.preventDefault();
@@ -100,3 +98,4 @@ function postFetch(task, description, category_id) {
         });
 
 }
+
