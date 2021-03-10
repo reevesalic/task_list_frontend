@@ -66,10 +66,11 @@ function createFormHandler(e) {
     const taskInput = document.querySelector("#input-task").value;
     const descriptionInput = document.querySelector("#input-description").value;
     const categoryId = parseInt(document.querySelector("#categories").value);
+    const phone = document.querySelector("#phone").value;
     postFetch(taskInput, descriptionInput, categoryId);
 }
 
-function setCheckComplete(task, id, complete) {
+function setCheckComplete(task, id, complete,) {
     console.log(task, id, complete);
     task.complete = complete;
     const bodyData = { task: { task, complete } };
@@ -80,9 +81,9 @@ function setCheckComplete(task, id, complete) {
     }).then((response) => response.json())
 }
 
-function postFetch(task, description, category_id) {
-    console.log(task, description, category_id);
-    const bodyData = { task: { task, description, category_id } };
+function postFetch(task, description, category_id, phone) {
+    console.log(task, description, category_id, phone);
+    const bodyData = { task: { task, description, category_id, phone } };
     fetch(endPoint, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
