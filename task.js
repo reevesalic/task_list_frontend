@@ -6,7 +6,7 @@ class Task {
     this.description = taskAttributes.description;
     this.category = taskAttributes.category;
     this.complete = taskAttributes.complete;
-    this.phone = taskAttributes.phone;
+  
     Task.all.push(this);
     console.log(this);
   }
@@ -19,7 +19,6 @@ renderTaskCard() {
      <h4> <input type="checkbox" class="complete" ${this.complete === true ? "checked" :  ""}><label data-id = ${this.id} for="complete"> </label> Task: ${this.task} </h4>
             <p>Description: ${this.description}</p>
             <p>Category: ${this.category.category}</p>
-            <p>Phone: ${this. phone}</p>
             <input id="delete" type="button" name="delete" value="Delete Task" class="delete" data-id = ${this.id}>
             <br>
 </div> 
