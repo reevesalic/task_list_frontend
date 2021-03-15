@@ -66,7 +66,7 @@ function createFormHandler(e) {
     const taskInput = document.querySelector("#input-task").value;
     const descriptionInput = document.querySelector("#input-description").value;
     const categoryId = parseInt(document.querySelector("#categories").value);
-    postFetch(taskInput, descriptionInput, categoryId);
+    postFetch(taskInput, descriptionInput, phone, categoryId);
 }
 
 function setCheckComplete(task, id, complete) {
